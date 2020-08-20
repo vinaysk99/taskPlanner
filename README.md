@@ -18,12 +18,12 @@ Kube and run:
 * start: `minikube start`
 * check cluster is created and running : `kubectl cluster-info`
 * create deployment(specify dockerImage) : 
-    ex: `kubectl create deployment {deploymentName} --image={dockerImage} --dry-run -o=yaml > deployment.yaml`
-    ->  `kubectl create deployment demo --image=vinaysk99/sample-planner-docker --dry-run -o=yaml > deployment.yaml`
+    * ex: `kubectl create deployment {deploymentName} --image={dockerImage} --dry-run -o=yaml > deployment.yaml`
+    * ->  `kubectl create deployment demo --image=vinaysk99/sample-planner-docker --dry-run -o=yaml > deployment.yaml`
 * add : `echo --- >> deployment.yaml`
 * create service : 
-    `kubectl create service clusterip {deploymentName} --tcp=8080:8080 --dry-run -o=yaml >> deployment.yaml`
-    `kubectl create service clusterip demo --tcp=8080:8080 --dry-run -o=yaml >> deployment.yaml`
+    * `kubectl create service clusterip {deploymentName} --tcp=8080:8080 --dry-run -o=yaml >> deployment.yaml`
+    * `kubectl create service clusterip demo --tcp=8080:8080 --dry-run -o=yaml >> deployment.yaml`
 * run deployment.yaml on kube(skip prev steps if updating): `kubectl apply -f deployment.yaml`
 * verify the services/pods are running : `kubectl get all`
 * create an SSH tunnel to connect to services : `kubectl port-forward svc/demo 8080:8080`
