@@ -17,7 +17,15 @@ public class CoreStepDefinitions extends CucumberHttp {
     @Given("^A HTTP DELETE request (.*?) on (.*?) returning status code (.*?)")
     public void makeHTTPDeleteRequest(String testcase, String endPoint, Integer responseCode) {
         httpResponseBody = null;
-        int statusCode = deleteHttpRequest(endPoint + "?ids=0");
+        int statusCode = deleteHttpRequest(endPoint + "?ids=0,1");
+        assertThat(statusCode, is(responseCode));
+        System.out.println(testcase + " - Successfully run");
+    }
+
+    @Given("^A HTTP PUT request to (.*?) for id (.*?) with body (.*?) on (.*?) returning status code (.*?)$")
+    public void makeHTTPPutRequest(String testcase, String id, String requestBodyPath, String endPoint, Integer responseCode) {
+        httpResponseBody = null;
+        int statusCode = putHttpRequestAndGetStatusCode(endPoint + "/" + id, requestBodyPath);
         assertThat(statusCode, is(responseCode));
         System.out.println(testcase + " - Successfully run");
     }

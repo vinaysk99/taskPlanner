@@ -8,7 +8,7 @@ import lombok.*;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-@EqualsAndHashCode(exclude = {"id"})
+@EqualsAndHashCode
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class Plan {
 
