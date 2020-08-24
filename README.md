@@ -20,8 +20,9 @@ Kube and run:
 * create deployment(specify dockerImage) : 
     * ex: `kubectl create deployment {deploymentName} --image={dockerImage} --dry-run -o=yaml > deployment.yaml`
     * ->  `kubectl create deployment demo --image=vinaysk99/sample-planner-docker --dry-run -o=yaml > deployment.yaml`
+* expose deployment : `kubectl expose deployment demo --type=LoadBalancer --port=8080`
 * add : `echo --- >> deployment.yaml`
-* create service : 
+* create service: 
     * `kubectl create service clusterip {deploymentName} --tcp=8080:8080 --dry-run -o=yaml >> deployment.yaml`
     * `kubectl create service clusterip demo --tcp=8080:8080 --dry-run -o=yaml >> deployment.yaml`
 * run deployment.yaml on kube(skip prev steps if updating): `kubectl apply -f deployment.yaml`

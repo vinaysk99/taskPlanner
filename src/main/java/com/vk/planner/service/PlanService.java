@@ -9,10 +9,7 @@ import org.springframework.util.StringUtils;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collection;
-import java.util.List;
+import java.util.*;
 import java.util.stream.Collectors;
 
 @Service
@@ -72,6 +69,7 @@ public class PlanService {
             Plan oldPlan = getPlanForId(plans, id);
             plans.remove(oldPlan);
             plans.add(plan);
+            savePlans(plans);
         }
         return true;
     }
@@ -84,7 +82,21 @@ public class PlanService {
         } else {
             Plan oldPlan = getPlanForId(plans, id);
             plans.remove(oldPlan);
+            savePlans(plans);
         }
+        return true;
+    }
+
+    public Boolean deletePlans(List<String> ids) {
+        List<Plan> plans = getPlansList();
+        List<Long> planIds = plans.stream().map(Plan::getId).collect(Collectors.toList());
+        for (String id : ids) {
+            if (planIds.contains(Long.parseLong(id))) {
+                Plan oldPlan = getPlanForId(plans, Long.parseLong(id));
+                plans.remove(oldPlan);
+            }
+        }
+        savePlans(plans);
         return true;
     }
 

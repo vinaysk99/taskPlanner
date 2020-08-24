@@ -6,6 +6,7 @@ import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Collection;
+import java.util.List;
 
 @RestController
 @RequestMapping("/v1/plans")
@@ -30,6 +31,12 @@ public class PlanController {
     @DeleteMapping(value = "/{id}")
     public Boolean deletePlan(@PathVariable("id") final Long id) {
         Boolean deleted = planService.deletePlan(id);
+        return deleted;
+    }
+
+    @DeleteMapping
+    public Boolean deletePlans(@RequestParam(name="ids") List<String> ids) {
+        Boolean deleted = planService.deletePlans(ids);
         return deleted;
     }
 
