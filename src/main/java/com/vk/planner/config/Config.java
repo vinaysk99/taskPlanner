@@ -10,6 +10,6 @@ public class Config implements WebMvcConfigurer {
 
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
-        registry.addInterceptor(new AuthValidatorInterceptor()).addPathPatterns("/**");
+        registry.addInterceptor(new AuthValidatorInterceptor()).addPathPatterns("/v1/**");
     }
 }
