@@ -1,6 +1,6 @@
-FROM openjdk:8-jdk-alpine
-RUN addgroup -S schodev && adduser -S vk -G schodev
-USER vk:schodev
+FROM adoptopenjdk/openjdk11:ubi
+#RUN addgroup -S schodev && adduser -S vk -G schodev
+#USER vk:schodev
 
 ARG DEPENDENCY=build/dependency
 COPY ${DEPENDENCY}/BOOT-INF/lib /app/lib
