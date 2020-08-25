@@ -60,6 +60,8 @@ public class CoreStepDefinitions extends CucumberHttp {
         try {
             List<Plan> plansExpected = mapper.readValue(expectedResponse, new TypeReference<List<Plan>>() {});
             List<Plan> plansActual = mapper.readValue(httpResponseBody, new TypeReference<List<Plan>>() {});
+            System.out.println("Expected Response : " + expectedResponse);
+            System.out.println("Actual Response : " + httpResponseBody);
             assertThat(plansExpected, is(plansActual));
         } catch (Exception e) {
             System.out.println("Exception : " + e.getMessage());
@@ -72,6 +74,8 @@ public class CoreStepDefinitions extends CucumberHttp {
         try {
             Plan planExpected = mapper.readValue(expectedResponse, Plan.class);
             Plan planActual = mapper.readValue(httpResponseBody, Plan.class);
+            System.out.println("Expected Response : " + expectedResponse);
+            System.out.println("Actual Response : " + httpResponseBody);
             assertThat(planExpected, is(planActual));
         } catch (Exception e) {
             System.out.println("Exception : " + e.getMessage());

@@ -52,6 +52,7 @@ public class PlanService {
 
         if (!plans.contains(plan)) {
             plan.setId(++maxPlanId);
+            plan.setStatus("Initiated");
             plans.add(plan);
             savePlans(plans);
             return plan;

@@ -3,12 +3,20 @@
     "id": 0,
     "type": "Cycle",
     "description": "Around Schofields",
-    "location": "https://goo.gl/maps/bQPPAAeTXfmqvvwH7"
+    "location": "https://goo.gl/maps/bQPPAAeTXfmqvvwH7",
+    "organiserEmailId": "vinaysk99@gmail.com",
+    "organiserPhoneNumber": "0404019233",
+    "dateTime": "2020-08-30T08:30",
+    "status": "Initiated"
   },
   {
     "id": 1,
     "type": "Walk",
     "description": "Around Ponds",
-    "location": "https://goo.gl/maps/bQPPAAeTXfmqvvwH7"
+    "location": "https://goo.gl/maps/bQPPAAeTXfmqvvwH7",
+    "organiserEmailId": "vinaysk99@gmail.com",
+    "organiserPhoneNumber": "0404019233",
+    "dateTime": "2020-08-30T10:30",
+    "status": "Updated"
   }
 ]

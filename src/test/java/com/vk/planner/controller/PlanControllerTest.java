@@ -46,8 +46,8 @@ public class PlanControllerTest extends AbstractControllerTest {
         // update and assert
         String newDesc = "New Desc";
         plan.setDescription(newDesc);
-        Boolean aBoolean = sendPutRequest(plan.getId(), plan);
-        assertThat(aBoolean, is(Boolean.TRUE));
+        Boolean updated = sendPutRequest(plan.getId(), plan);
+        assertThat(updated, is(Boolean.TRUE));
 
         sendDeleteRequest(plan.getId());
     }
