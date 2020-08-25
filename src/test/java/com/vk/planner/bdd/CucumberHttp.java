@@ -1,4 +1,4 @@
-package com.vk.planner;
+package com.vk.planner.bdd;
 
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.IOUtils;
@@ -10,6 +10,7 @@ import org.apache.http.impl.client.HttpClientBuilder;
 import org.springframework.core.io.ClassPathResource;
 
 import java.io.IOException;
+import java.util.Base64;
 
 public class CucumberHttp {
 
@@ -63,6 +64,8 @@ public class CucumberHttp {
     private HttpResponse executeHttpRequestAndGetResponse(HttpRequestBase httpRequest) {
         HttpResponse httpResponse = null;
         try {
+            String header = "Basic " + Base64.getEncoder().encodeToString("vk:jsr".getBytes());
+            httpRequest.addHeader("Authorization", header);
             httpResponse = httpClient.execute(httpRequest);
         } catch (IOException e) {
             e.printStackTrace();

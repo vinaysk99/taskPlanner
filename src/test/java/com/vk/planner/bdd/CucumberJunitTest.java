@@ -1,4 +1,4 @@
-package com.vk.planner;
+package com.vk.planner.bdd;
 
 import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;

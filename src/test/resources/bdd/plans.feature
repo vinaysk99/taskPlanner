@@ -35,8 +35,8 @@ Feature: CRUD on Plans
       | testcase      | endPoint  | responseCode | expectedOutputJSONPath        |
       | get all plans | /v1/plans | 200          | testdata/response/plans1.json |
 
-#  Scenario Outline: Delete all plans
-#    Given A HTTP DELETE request <testcase> on <endPoint> returning status code <responseCode>
-#    Examples:
-#      | testcase     | endPoint  | responseCode |
-#      | delete plans | /v1/plans | 200          |
+  Scenario Outline: Delete all plans
+    Given A HTTP DELETE request <testcase> on <endPoint> returning status code <responseCode>
+    Examples:
+      | testcase     | endPoint  | responseCode |
+      | delete plans | /v1/plans | 200          |

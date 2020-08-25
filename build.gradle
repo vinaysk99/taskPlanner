@@ -18,18 +18,18 @@ apply plugin: 'io.spring.dependency-management'
 
 group = 'com.vk.taskplanner'
 version = '1.0.0-SNAPSHOT'
-
-bootJar {
-    baseName = 'sample-vk99'
-    version =  '0.1.0'
-}
+//
+//bootJar {
+//    baseName = 'sample-vk99'
+//    version =  '0.1.0'
+//}
 
 repositories {
     mavenCentral()
 }
-
-sourceCompatibility = 1.8
-targetCompatibility = 1.8
+//
+//sourceCompatibility = 1.8
+//targetCompatibility = 1.8
 
 dependencies {
     compile("org.springframework.boot:spring-boot-starter-web") 

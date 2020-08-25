@@ -1,4 +1,4 @@
-package com.vk.planner;
+package com.vk.planner.bdd;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
